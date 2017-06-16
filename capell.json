@@ -5,7 +5,7 @@
     "displayName": "YouTube Widget",
     "kind": "package",
     "capellApiVersion": "^1.0",
-    "version": "1.x-dev",
+    "version": "1.0.0",
     "description": "Local-poster YouTube embeds that contact youtube-nocookie.com only after explicit activation.",
     "product": {
         "group": "Capell Foundation",

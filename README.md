@@ -35,21 +35,45 @@ Screenshot contract: `docs/screenshots.json`.
 
 ![YouTube Widget extension card](docs/screenshots/extension-card.svg)
 
-![YouTube fields in Layout Builder](docs/screenshots/youtube-layout-builder-editor.png)
+![Illustrative youtube public output preview](docs/screenshots/youtube-public-output.png)
 
-- YouTube Widget extension card (marketplace, required).
-- YouTube fields in Layout Builder (admin, optional).
-- YouTube public output (frontend, optional).
+- YouTube Widget extension card (marketplace, required evidence).
+- YouTube fields in Layout Builder (admin, supplementary evidence).
+- Illustrative youtube public output preview (frontend, required evidence).
+- YouTube fields in Layout Builder with admin sidebar menu open (admin, supplementary evidence).
 
 ## Technical Shape
 
-- Service providers: `Capell\WidgetYouTube\Providers\WidgetYouTubeServiceProvider`.
-- Filament classes: `YouTubeVideoIdField`, `YouTubeWidget`.
-- Data objects: `YouTubeInputData`, `YouTubeRenderData`.
-- Manifest contributions: `content-widget: Capell\WidgetYouTube\WidgetYouTubeContribution`.
-- Health checks: `Capell\WidgetYouTube\Health\WidgetYouTubeHealthCheck`.
-- Blade views: `packages/widget-youtube/resources/views/widget.blade.php`.
-- Cache tags: `widget-youtube`.
+### Service providers
+
+- `Capell\WidgetYouTube\Providers\WidgetYouTubeServiceProvider`
+
+### Filament classes
+
+- `YouTubeVideoIdField`
+- `YouTubeWidget`
+
+### Data objects
+
+- `YouTubeInputData`
+- `YouTubeRenderData`
+
+### Manifest contributions
+
+- `content-widget: Capell\WidgetYouTube\WidgetYouTubeContribution`
+
+### Health checks
+
+- `Capell\WidgetYouTube\Health\WidgetYouTubeHealthCheck`
+
+### Blade views
+
+- `packages/widget-youtube/resources/views/widget.blade.php`
+
+### Cache tags
+
+- `widget-youtube`
+
 
 ## Data Model
 
@@ -60,7 +84,7 @@ This package has no schema impact. It extends Capell through `content-widget` co
 - Required packages: `capell-app/admin`, `capell-app/core`, `capell-app/frontend`, `capell-app/layout-builder`.
 - Admin navigation: no admin page or resource contribution is declared.
 - Admin/editor extensions: `content-widget: WidgetYouTubeContribution`.
-- Permissions: none declared in `capell.json`.
+- Permissions: no package permission declarations or Shield gates detected; host access rules still apply.
 - Public routes: none declared.
 - Database changes: no package migrations declared.
 - Config: no package config files.
@@ -85,8 +109,7 @@ This package has no schema impact. It extends Capell through `content-widget` co
 ## Quick Start
 
 1. Install the package: `composer require capell-app/widget-youtube`.
-2. No package-specific setup command or migrations are declared.
-3. Open the package detail or install-intent surface and confirm the YouTube Widget extension card is present.
+2. Open `/screenshot-fixtures/catalogue/widget-youtube/youtube-public-output` and confirm the public output renders without admin state.
 
 ## Next Steps
 

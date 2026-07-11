@@ -1,0 +1,151 @@
+{
+    "manifest-version": 3,
+    "name": "capell-app/widget-youtube",
+    "slug": "widget-youtube",
+    "displayName": "YouTube Widget",
+    "kind": "package",
+    "capellApiVersion": "^1.0",
+    "version": "1.x-dev",
+    "description": "Local-poster YouTube embeds that contact youtube-nocookie.com only after explicit activation.",
+    "product": {
+        "group": "Capell Foundation",
+        "tier": "free",
+        "bundle": "foundation"
+    },
+    "namespace": "Capell\\WidgetYouTube",
+    "surfaces": ["admin", "frontend"],
+    "dependencies": {
+        "requires": [
+            "capell-app/admin",
+            "capell-app/core",
+            "capell-app/frontend",
+            "capell-app/layout-builder"
+        ],
+        "supports": ["capell-app/privacy-center"],
+        "conflicts": []
+    },
+    "providers": {
+        "metadata": [],
+        "install": [],
+        "runtime": [
+            "Capell\\WidgetYouTube\\Providers\\WidgetYouTubeServiceProvider"
+        ],
+        "admin": [],
+        "frontend": []
+    },
+    "contributes": [
+        {
+            "type": "content-widget",
+            "key": "capell-app.youtube",
+            "class": "Capell\\WidgetYouTube\\WidgetYouTubeContribution"
+        }
+    ],
+    "database": {
+        "migrations": false,
+        "settings": false,
+        "requiredTables": []
+    },
+    "commands": {
+        "install": null,
+        "setup": null,
+        "setupParams": [],
+        "demo": null,
+        "doctor": null
+    },
+    "settings": [],
+    "permissions": [],
+    "capabilities": ["frontend.public-static"],
+    "security": {
+        "riskTier": "medium",
+        "publicSurface": {
+            "routeNames": [],
+            "auth": "none",
+            "csrfExemptRoutes": [],
+            "signedRoutes": [],
+            "tokenizedRoutes": [],
+            "webhookRoutes": [],
+            "throttledRoutes": []
+        },
+        "sensitiveData": {
+            "encryptedFields": [],
+            "hashedTokenFields": [],
+            "redactedOutputClasses": [],
+            "plaintextJustifications": []
+        },
+        "publicOutput": {
+            "cacheSafe": true,
+            "forbidAuthoringSurface": true,
+            "forbidSecrets": true,
+            "forbidPublicBladeQueries": true
+        },
+        "externalHttpClients": {
+            "requiresTimeouts": false,
+            "requiresSecretRedaction": true,
+            "clients": ["youtube-nocookie.com"]
+        },
+        "adminSurface": { "authorization": "panel-auth", "permissions": [] }
+    },
+    "performance": {
+        "frontendRenderBudgetMs": 8,
+        "adminQueryBudget": 0,
+        "cacheTags": ["widget-youtube"],
+        "cacheSafety": {
+            "cacheable": true,
+            "variesBy": ["site", "locale", "theme"],
+            "sensitiveOutput": false,
+            "invalidationSources": [
+                {
+                    "model": "Capell\\Core\\Models\\Page",
+                    "events": [
+                        "created",
+                        "updated",
+                        "deleted",
+                        "restored",
+                        "forceDeleted"
+                    ]
+                },
+                {
+                    "model": "Capell\\Core\\Models\\Media",
+                    "events": [
+                        "created",
+                        "updated",
+                        "deleted",
+                        "restored",
+                        "forceDeleted"
+                    ]
+                },
+                {
+                    "model": "Capell\\Core\\Models\\Theme",
+                    "events": ["updated"]
+                }
+            ],
+            "queueInvalidation": false
+        }
+    },
+    "healthChecks": [
+        {
+            "key": "widget-youtube.package-health",
+            "label": "YouTube widget package health",
+            "class": "Capell\\WidgetYouTube\\Health\\WidgetYouTubeHealthCheck",
+            "severity": "critical",
+            "surface": "frontend"
+        }
+    ],
+    "commercial": {
+        "proposedLicense": "free",
+        "requestedCertification": "first-party",
+        "supportPolicy": "capell-first-party",
+        "privateDocsRequested": false
+    },
+    "marketplace": {
+        "summary": "Privacy-gated YouTube video with a local poster and no pre-activation tracking.",
+        "screenshots": [
+            {
+                "path": "docs/assets/marketplace/extension-card.jpg",
+                "alt": "YouTube widget preview",
+                "caption": "YouTube widget"
+            }
+        ],
+        "categories": ["foundation", "frontend", "media"]
+    }
+}

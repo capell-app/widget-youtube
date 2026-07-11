@@ -12,6 +12,19 @@
     "auditReason": "The package is release-ready with honest interim Marketplace artwork; deterministic Layout Builder and public-page fixtures still need capture.",
     "entries": [
         {
+            "id": "widget-youtube-extension-card",
+            "title": "YouTube Widget extension card.",
+            "package": "widget-youtube",
+            "surface": "marketplace",
+            "targetType": "marketplace-asset",
+            "target": "extension-card",
+            "required": true,
+            "path": "docs/assets/marketplace/extension-card.svg",
+            "screenshotPath": "packages/widget-youtube/docs/screenshots/extension-card.svg",
+            "notes": "Committed Beta Marketplace card artwork for YouTube Widget.",
+            "useCase": "A buyer reviews the Beta extension card before enabling YouTube Widget."
+        },
+        {
             "id": "youtube-layout-builder-editor",
             "title": "YouTube fields in Layout Builder.",
             "package": "widget-youtube",

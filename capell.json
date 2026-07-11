@@ -10,5 +10,11 @@
     "performance": {"frontendRenderBudgetMs": 8, "adminQueryBudget": 0, "cacheTags": ["widget-youtube"], "cacheSafety": {"cacheable": true, "variesBy": ["site", "locale", "theme"], "sensitiveOutput": false, "invalidationSources": [{"model": "Capell\\Core\\Models\\Page", "events": ["created", "updated", "deleted", "restored", "forceDeleted"]}, {"model": "Capell\\Core\\Models\\Media", "events": ["created", "updated", "deleted", "restored", "forceDeleted"]}, {"model": "Capell\\Core\\Models\\Theme", "events": ["updated"]}], "queueInvalidation": false}},
     "healthChecks": [{"key": "widget-youtube.package-health", "label": "YouTube widget package health", "class": "Capell\\WidgetYouTube\\Health\\WidgetYouTubeHealthCheck", "severity": "critical", "surface": "frontend"}],
     "commercial": {"proposedLicense": "free", "requestedCertification": "first-party", "supportPolicy": "capell-first-party", "privateDocsRequested": false},
-    "marketplace": {"summary": "Privacy-gated YouTube video with a local poster and no pre-activation tracking.", "screenshots": [], "categories": ["foundation", "frontend", "media"]}
+    "marketplace": {"summary": "Privacy-gated YouTube video with a local poster and no pre-activation tracking.", "screenshots": [
+        {
+            "path": "docs/assets/marketplace/extension-card.svg",
+            "alt": "YouTube widget beta marketplace artwork",
+            "caption": "Interim beta artwork for the YouTube widget while the documented Layout Builder fixture is captured."
+        }
+    ], "categories": ["foundation", "frontend", "media"]}
 }

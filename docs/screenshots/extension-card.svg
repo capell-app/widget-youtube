@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">YouTube beta Marketplace artwork</title>
+  <desc id="desc">Local poster first. No YouTube request before play.</desc>
+  <rect width="1280" height="720" fill="#F4F0E8"/>
+  <path d="M0 0H1280V92H0Z" fill="#111827"/>
+  <text x="64" y="58" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="2" fill="#FFFFFF">FOUNDATION WIDGET · BETA</text>
+  <rect x="64" y="142" width="88" height="10" rx="5" fill="#E11D48"/>
+  <text x="64" y="236" font-family="Helvetica, Arial, sans-serif" font-size="64" font-weight="800" fill="#111827">YouTube</text>
+  <text x="64" y="304" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#334155">Local poster first.</text>
+  <text x="64" y="344" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#334155">No YouTube request before play.</text>
+  <rect x="64" y="412" width="500" height="114" rx="18" fill="#FFFFFF" stroke="#111827" stroke-width="4"/>
+  <circle cx="108" cy="469" r="20" fill="#E11D48"/>
+  <path d="M98 469L106 477L120 459" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="148" y="461" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#111827">HONEST BETA EVIDENCE</text>
+  <text x="148" y="491" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#475569">Fixture captures are documented next.</text>
+  <rect x="724" y="170" width="440" height="330" rx="22" fill="#111827" stroke="#111827" stroke-width="6"/><rect x="740" y="186" width="408" height="298" rx="14" fill="#334155"/><circle cx="944" cy="320" r="60" fill="#E11D48" stroke="#111827" stroke-width="5"/><path d="M927 286L977 320L927 354Z" fill="#FFFFFF"/>
+  <rect x="766" y="518" width="356" height="54" rx="12" fill="#FFFFFF" stroke="#111827" stroke-width="4"/><circle cx="798" cy="545" r="12" fill="#E11D48"/><text x="826" y="551" font-size="17" font-weight="800" fill="#111827">NO REQUEST BEFORE PLAY</text>
+  <text x="64" y="664" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="1.4" fill="#475569">FREE FIRST-PARTY EXTENSION</text>
+  <text x="1216" y="664" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="800" fill="#111827">CAPELL</text>
+</svg>

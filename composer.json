@@ -1,0 +1,38 @@
+{
+    "name": "capell-app/widget-youtube",
+    "description": "Privacy-gated YouTube widget for Capell.",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.4",
+        "capell-app/admin": "^0.0.4 || 0.0.x-dev",
+        "capell-app/core": "^0.0.4 || 0.0.x-dev",
+        "capell-app/frontend": "^0.0.4 || 0.0.x-dev",
+        "capell-app/layout-builder": "^0.0.4 || 0.0.x-dev",
+        "spatie/laravel-package-tools": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Capell\\WidgetYouTube\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Capell\\WidgetYouTube\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Capell\\WidgetYouTube\\Providers\\WidgetYouTubeServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-main": "0.0.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true
+}

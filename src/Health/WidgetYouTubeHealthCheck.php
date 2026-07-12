@@ -11,7 +11,7 @@ final class WidgetYouTubeHealthCheck extends AbstractWidgetExtensionHealthCheck
 {
     public static function compatibleCapellApiVersion(): string
     {
-        return '^4.0';
+        return '^0.0';
     }
 
     protected static function definitionKey(): string

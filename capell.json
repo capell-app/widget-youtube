@@ -36,7 +36,8 @@
     "contributes": [
         {
             "type": "content-widget",
-            "class": "Capell\\WidgetYouTube\\WidgetYouTubeContribution"
+            "class": "Capell\\WidgetYouTube\\WidgetYouTubeContribution",
+            "key": "capell-app.widget-youtube"
         }
     ],
     "database": {

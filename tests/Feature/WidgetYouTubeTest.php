@@ -32,7 +32,9 @@ it('ships no provider request in initial html', function (): void {
     expect($html)->not->toContain('youtube-nocookie.com')
         ->not->toContain('img.youtube.com')
         ->toContain('&lt;b&gt;Tour&lt;/b&gt;')
-        ->toContain('referrerpolicy="strict-origin-when-cross-origin"');
+        ->toContain('referrerpolicy="strict-origin-when-cross-origin"')
+        ->toContain('sandbox="allow-scripts allow-same-origin allow-presentation"')
+        ->toContain('data-privacy-denied="Video playback is disabled by your privacy choices."');
 });
 
 it('validates the normalized id and local poster', function (): void {

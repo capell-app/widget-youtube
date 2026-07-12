@@ -29,6 +29,8 @@ Status details:
 
 Screenshot contract: `docs/screenshots.json`.
 
+![YouTube Widget extension card](docs/screenshots/extension-card.svg)
+
 - YouTube Widget extension card (marketplace, required).
 - YouTube fields in Layout Builder (admin, optional).
 - YouTube public output (frontend, optional).

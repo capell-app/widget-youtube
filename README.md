@@ -27,9 +27,13 @@ Status details:
 
 ## Screens And Workflow
 
-Marketplace media is declared in `capell.json`:
+Screenshot contract: `docs/screenshots.json`.
 
-- YouTube widget.
+![YouTube Widget extension card](docs/screenshots/extension-card.svg)
+
+- YouTube Widget extension card (marketplace, required).
+- YouTube fields in Layout Builder (admin, optional).
+- YouTube public output (frontend, optional).
 
 ## Technical Shape
 
@@ -80,6 +84,8 @@ Docs gap: document extension points here if the package delegates persistence to
 
 - [Package docs](docs/README.md)
 - [Overview](docs/overview.md)
+- [Screenshot contract](docs/screenshots.json)
+- [Marketplace assets](docs/assets/marketplace/)
 - [Capell content language plan](../../docs/CONTENT_LANGUAGE_PLAN.md)
 - [Capell documentation design system](../../docs/DESIGN_SYSTEM.md)
 - [Capell and package ERD notes](../../docs/erd/capell-and-package-erds.md)

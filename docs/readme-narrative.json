@@ -1,0 +1,35 @@
+{
+    "whatThisPluginAdds": {
+        "text": "YouTube adds a Layout Builder widget with a local poster and a youtube-nocookie.com player that is requested only after visitor activation. Privacy Center decisions can keep the external player blocked.",
+        "evidence": [
+            "src/Filament/YouTubeWidget.php",
+            "resources/views/widget.blade.php",
+            "tests/Feature/WidgetYouTubeTest.php"
+        ]
+    },
+    "surfaceOutcome": {
+        "text": "Editors configure the video and poster in Layout Builder, while visitors first see local public output and choose whether to load the external player.",
+        "evidence": [
+            "capell.json",
+            "resources/views/widget.blade.php",
+            "tests/Feature/WidgetYouTubeTest.php"
+        ]
+    },
+    "whyItMatters": {
+        "developers": {
+            "text": "The extension registers its interaction assets while tests verify that initial HTML contains no YouTube request target and that denied privacy state remains blocked.",
+            "evidence": [
+                "src/Providers/WidgetYouTubeServiceProvider.php",
+                "resources/views/widget.blade.php",
+                "tests/Feature/WidgetYouTubeTest.php"
+            ]
+        },
+        "teams": {
+            "text": "Teams can offer embedded video without making an external YouTube request part of the initial page response.",
+            "evidence": [
+                "resources/views/widget.blade.php",
+                "tests/Feature/WidgetYouTubeTest.php"
+            ]
+        }
+    }
+}

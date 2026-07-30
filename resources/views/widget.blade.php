@@ -34,12 +34,7 @@
         ><iframe
             title="{{ $renderData->title }}"
             sandbox="allow-scripts allow-same-origin allow-presentation"
-            allow="
-                accelerometer;
-                encrypted-media;
-                gyroscope;
-                picture-in-picture;
-            "
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
             loading="lazy"

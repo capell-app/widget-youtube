@@ -54,6 +54,27 @@
             "colorSchemes": ["light", "dark"],
             "screenshotPath": "packages/widget-youtube/docs/screenshots/youtube-public-output.png",
             "fixtureKind": "illustrative-catalogue"
+        },
+        {
+            "id": "widget-youtube-admin-sidebar-menu-open",
+            "title": "YouTube fields in Layout Builder with admin sidebar menu open.",
+            "package": "widget-youtube",
+            "surface": "admin",
+            "targetType": "admin-surface",
+            "target": "Layout Builder page editor",
+            "required": false,
+            "notes": "Capture the video fields and the public pre-activation poster with its play control and privacy explanation visible. Capture the editor state before the page is published. Capture this same admin surface with the fully collapsible sidebar opened.",
+            "useCase": "An editor can see the fields used to configure the YouTube widget.",
+            "url": "/screenshot-fixtures/widgets/youtube/editor",
+            "waitFor": "[data-widget-screenshot-fixture=\"editor\"]",
+            "colorSchemes": ["light"],
+            "screenshotPath": "packages/widget-youtube/docs/screenshots/widget-youtube-admin-sidebar-menu-open.png",
+            "beforeWait": [
+                {
+                    "type": "click",
+                    "selector": ".fi-topbar-open-collapse-sidebar-btn"
+                }
+            ]
         }
     ]
 }

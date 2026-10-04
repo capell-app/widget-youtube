@@ -17,9 +17,11 @@ const initialiseYouTube = (root) => {
         },
     )
 }
-document.querySelectorAll('[data-capell-youtube]').forEach(initialiseYouTube)
+document
+    .querySelectorAll('[data-capell-widget-youtube]')
+    .forEach(initialiseYouTube)
 document.addEventListener('capell:content-ready', (event) =>
     event.target
-        ?.querySelectorAll?.('[data-capell-youtube]')
+        ?.querySelectorAll?.('[data-capell-widget-youtube]')
         .forEach(initialiseYouTube),
 )

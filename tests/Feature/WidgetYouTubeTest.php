@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Capell\Frontend\Actions\AssertPublicHtmlContainsNoAuthoringSurfaceAction;
+use Capell\Frontend\Support\Security\PublicHtmlSafetyInspector;
 use Capell\LayoutBuilder\Support\WidgetExtensions\WidgetExtensionRegistry;
 use Capell\WidgetYouTube\Data\YouTubeInputData;
 use Capell\WidgetYouTube\Data\YouTubeRenderData;
@@ -9,6 +11,7 @@ use Capell\WidgetYouTube\Filament\YouTubeVideoIdField;
 use Capell\WidgetYouTube\Health\WidgetYouTubeHealthCheck;
 use Capell\WidgetYouTube\Providers\WidgetYouTubeServiceProvider;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\Response;
 
 beforeEach(function (): void {
     $this->app->register(WidgetYouTubeServiceProvider::class);
@@ -28,7 +31,20 @@ it('registers a healthy typed widget definition', function (): void {
 
 it('ships no provider request in initial html', function (): void {
     $renderData = YouTubeRenderData::from(['videoId' => 'dQw4w9WgXcQ', 'poster' => 'posters/video.jpg', 'title' => 'Product tour', 'caption' => '<b>Tour</b>']);
-    $html = view('capell-widget-youtube::widget', compact('renderData'))->render();
+    $html = view('capell-widget-youtube::widget', ['renderData' => $renderData])->render();
+
+    expect($html)->toContain('data-capell-widget-youtube')
+        ->not->toContain('data-capell-youtube');
+
+    AssertPublicHtmlContainsNoAuthoringSurfaceAction::run(new Response(
+        '<!doctype html><html><body>' . $html . '</body></html>',
+        Response::HTTP_OK,
+        ['Content-Type' => 'text/html'],
+    ));
+
+    expect(resolve(PublicHtmlSafetyInspector::class)->containsAuthoringSurface(
+        '<section data-capell-youtube>Widget</section>',
+    ))->toBeTrue();
     expect($html)->not->toContain('youtube-nocookie.com')
         ->not->toContain('img.youtube.com')
         ->toContain('&lt;b&gt;Tour&lt;/b&gt;')
@@ -38,5 +54,5 @@ it('ships no provider request in initial html', function (): void {
 });
 
 it('validates the normalized id and local poster', function (): void {
-    expect(fn () => YouTubeInputData::validateAndCreate(['videoId' => 'invalid', 'poster' => 'https://remote.test/poster.jpg', 'title' => 'Bad']))->toThrow(ValidationException::class);
+    expect(fn (): YouTubeInputData => YouTubeInputData::validateAndCreate(['videoId' => 'invalid', 'poster' => 'https://remote.test/poster.jpg', 'title' => 'Bad']))->toThrow(ValidationException::class);
 });

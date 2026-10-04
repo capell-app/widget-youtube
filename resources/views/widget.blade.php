@@ -1,7 +1,7 @@
 @php /** @var \Capell\WidgetYouTube\Data\YouTubeRenderData $renderData */ @endphp
 <figure
     class="capell-youtube"
-    data-capell-youtube
+    data-capell-widget-youtube
     data-video-id="{{ $renderData->videoId }}"
     data-privacy-denied="{{ __('capell-widget-youtube::widget.privacy_denied') }}"
 >

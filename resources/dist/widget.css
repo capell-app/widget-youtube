@@ -1,5 +1,5 @@
 .capell-youtube {
-    color: var(--theme-text, #172033);
+    color: inherit;
 }
 .capell-youtube__frame {
     position: relative;
@@ -32,8 +32,13 @@
     inset: auto 1rem 1rem;
     margin: 0;
     background: var(--theme-surface, #fff);
-    color: inherit;
+    color: var(--theme-foreground, currentColor);
 }
 .capell-youtube figcaption {
     padding: 0.75rem 0;
+}
+
+.dark .capell-youtube__frame button {
+    background: var(--foundation-primary-action, var(--theme-primary, #1d4ed8));
+    color: var(--foundation-page-bg, var(--theme-on-primary, #fff));
 }

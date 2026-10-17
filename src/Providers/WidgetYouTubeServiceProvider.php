@@ -19,6 +19,7 @@ use Capell\LayoutBuilder\Support\WidgetExtensions\WidgetExtensionRegistrar;
 use Capell\WidgetYouTube\Data\YouTubeInputData;
 use Capell\WidgetYouTube\Data\YouTubeRenderData;
 use Capell\WidgetYouTube\Filament\YouTubeWidget;
+use Override;
 use Spatie\LaravelPackageTools\Package;
 
 final class WidgetYouTubeServiceProvider extends AbstractPackageServiceProvider
@@ -29,12 +30,14 @@ final class WidgetYouTubeServiceProvider extends AbstractPackageServiceProvider
 
     public static PackageTypeEnum $type = PackageTypeEnum::Package;
 
+    #[Override]
     public function configurePackage(Package $package): void
     {
         $package->name(self::$name)->hasViews()->hasTranslations()->hasAssets();
     }
 
-    public function packageBooted(): void
+    #[Override]
+    protected function bootInstalledRuntime(): void
     {
         resolve(WidgetExtensionRegistrar::class)->register(new WidgetExtensionDefinitionData(
             key: 'capell-app.youtube',
@@ -49,6 +52,7 @@ final class WidgetYouTubeServiceProvider extends AbstractPackageServiceProvider
             defaultResourceLoadingStrategy: PresentationLoadingStrategy::Interaction,
             capabilities: new WidgetExtensionCapabilitiesData(requiresInstanceIdentity: true, presentationCapabilities: [WidgetPresentationCapability::Width, WidgetPresentationCapability::Alignment, WidgetPresentationCapability::LoadingStrategy]),
         ));
+
         resolve(FrontendResourceRegistry::class)->register(new FrontendResourceGroupData(
             key: 'capell-app.widget-youtube',
             label: 'YouTube widget',
@@ -70,6 +74,7 @@ final class WidgetYouTubeServiceProvider extends AbstractPackageServiceProvider
         ));
     }
 
+    #[Override]
     protected function isPackageInstalled(): bool
     {
         return CapellCore::isPackageInstalled(self::$packageName);

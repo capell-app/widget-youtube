@@ -38,6 +38,11 @@
             "type": "content-widget",
             "key": "capell-app.youtube",
             "class": "Capell\\WidgetYouTube\\WidgetYouTubeContribution"
+        },
+        {
+            "type": "asset",
+            "key": "resource-group:capell-app.widget-youtube",
+            "class": "Capell\\WidgetYouTube\\WidgetYouTubeContribution"
         }
     ],
     "database": {

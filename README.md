@@ -102,11 +102,17 @@ This package has no schema impact. It extends Capell through `asset` contributio
 | --- | --- | --- | --- |
 | Package surface is missing after install | Provider or manifest is not loaded | Confirm `capell.json`, package `composer.json`, and provider registration | Reinstall the package, refresh Composer autoload, and clear host caches |
 | Public output leaks unexpected state | Render data, cache variation, or authoring boundary has regressed | Check public Blade, cache tags, and public-output safety tests | Move data loading out of Blade and rerun the package public-output tests |
+| The video is refused | The video ID is not exactly 11 letters, numbers, dashes or underscores | Check the video ID, not the full address | Paste only the 11 character ID from the video address |
+| The poster image is refused | The poster path is a web address or contains unsupported characters | Check the poster field | Pick a poster image from the media library |
 
 ## Quick Start
 
 1. Install the package: `composer require capell-app/widget-youtube`.
-2. Open a host admin workflow that uses the package extension and verify YouTube Widget is available.
+2. Open a page, click **Layout builder**, **Add widgets**, then choose **YouTube video**.
+
+## Upgrading
+
+No manual steps between minor versions.
 
 ## Next Steps
 

@@ -9,14 +9,17 @@ use Capell\LayoutBuilder\Filament\Components\Forms\WidgetFileUpload;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
+use Override;
 
 final class YouTubeWidget implements FilamentWidget
 {
+    #[Override]
     public static function getWidgetName(): string
     {
         return 'capell-app.youtube';
     }
 
+    #[Override]
     public static function make(): Block
     {
         return Block::make(self::getWidgetName())->label(__('capell-widget-youtube::widget.label'))->schema([

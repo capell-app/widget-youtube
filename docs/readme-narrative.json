@@ -31,5 +31,21 @@
                 "tests/Feature/WidgetYouTubeTest.php"
             ]
         }
-    }
+    },
+    "troubleshooting": [
+        {
+            "symptom": "The video is refused",
+            "cause": "The video ID is not exactly 11 letters, numbers, dashes or underscores",
+            "check": "Check the video ID, not the full address",
+            "fix": "Paste only the 11 character ID from the video address",
+            "evidence": ["src/Data/YouTubeInputData.php"]
+        },
+        {
+            "symptom": "The poster image is refused",
+            "cause": "The poster path is a web address or contains unsupported characters",
+            "check": "Check the poster field",
+            "fix": "Pick a poster image from the media library",
+            "evidence": ["src/Data/YouTubeInputData.php"]
+        }
+    ]
 }

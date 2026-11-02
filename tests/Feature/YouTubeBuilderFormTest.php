@@ -35,7 +35,7 @@ function youtubeBuilderForm(Widget $widget, ?array $state = null): Schema
 
     // Match the persisted attribute so Core can authorise reopened upload paths.
     return Schema::make($host)->model($widget)->statePath('data')->components([
-        ContentBuilder::make('meta.content')->blocks([YouTubeWidget::make()]),
+        ContentBuilder::make('meta.content'),
     ])->fill(['meta' => $state ?? $widget->meta ?? []]);
 }
 

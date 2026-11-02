@@ -21,7 +21,9 @@ beforeEach(function (): void {
 
 it('normalizes supported urls through the core parser', function (): void {
     expect(YouTubeVideoIdField::normalise('https://youtu.be/dQw4w9WgXcQ'))->toBe('dQw4w9WgXcQ')
-        ->and(YouTubeVideoIdField::normalise('javascript:alert(1)'))->toBeNull();
+        ->and(YouTubeVideoIdField::normalise('dQw4w9WgXcQ'))->toBe('dQw4w9WgXcQ')
+        ->and(YouTubeVideoIdField::normalise('javascript:alert(1)'))->toBeNull()
+        ->and(YouTubeVideoIdField::normalise('broken'))->toBeNull();
 });
 
 it('registers a healthy typed widget definition', function (): void {

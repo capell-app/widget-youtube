@@ -1,6 +1,6 @@
 {
     "whatThisPluginAdds": {
-        "text": "YouTube adds a Layout Builder widget with a local poster and a youtube-nocookie.com player that is requested only after visitor activation. Privacy Center decisions can keep the external player blocked.",
+        "text": "YouTube adds a Layout Builder widget with a local poster and a youtube-nocookie.com player that is requested only after visitor activation. With Privacy Centre installed, a visitor who refused marketing cookies, or whose browser sends Global Privacy Control, keeps the external player blocked.",
         "evidence": [
             "src/Filament/YouTubeWidget.php",
             "resources/views/widget.blade.php",

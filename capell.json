@@ -8,7 +8,7 @@
     "version": "1.0.0",
     "description": "Local-poster YouTube embeds that contact youtube-nocookie.com only after explicit activation.",
     "product": {
-        "group": "Capell Foundation",
+        "group": "Capell Essentials",
         "tier": "free",
         "bundle": "foundation"
     },
@@ -147,7 +147,34 @@
     },
     "marketplace": {
         "summary": "Privacy-gated YouTube video with a local poster and no pre-activation tracking.",
+        "description": "Embed a YouTube video without loading YouTube until the visitor chooses to play: they see a local poster and a play control first, and a direct watch link without JavaScript. Requires Layout Builder. Limits: it supports YouTube only, and the poster image must be uploaded to the Capell media library.",
+        "problem": "A team embedding video may contact YouTube before a visitor chooses to play it.",
+        "outcome": "A page shows a local poster until the visitor chooses to load the video.",
+        "faq": [
+            {
+                "question": "What appears before video playback?",
+                "answer": "Visitors first see a local poster and choose whether to load the player."
+            },
+            {
+                "question": "Can privacy choices prevent playback?",
+                "answer": "Yes. Privacy Centre decisions can keep the external player blocked."
+            },
+            {
+                "question": "When is YouTube contacted by the player?",
+                "answer": "The youtube-nocookie.com player is requested only after visitor activation."
+            }
+        ],
         "screenshots": [
+            {
+                "path": "docs/assets/marketplace/listing-youtube-public-output.png",
+                "alt": "Youtube public output",
+                "caption": "Youtube public output"
+            },
+            {
+                "path": "docs/assets/marketplace/listing-youtube-layout-builder-editor.png",
+                "alt": "YouTube fields in Layout Builder",
+                "caption": "YouTube fields in Layout Builder"
+            },
             {
                 "path": "docs/assets/marketplace/extension-card.jpg",
                 "alt": "YouTube widget preview",

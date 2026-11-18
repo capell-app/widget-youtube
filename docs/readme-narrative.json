@@ -1,20 +1,4 @@
 {
-    "whatThisPluginAdds": {
-        "text": "YouTube adds a Layout Builder widget with a local poster and a youtube-nocookie.com player that is requested only after visitor activation. With Privacy Centre installed, a visitor who refused marketing cookies, or whose browser sends Global Privacy Control, keeps the external player blocked.",
-        "evidence": [
-            "src/Filament/YouTubeWidget.php",
-            "resources/views/widget.blade.php",
-            "tests/Feature/WidgetYouTubeTest.php"
-        ]
-    },
-    "surfaceOutcome": {
-        "text": "Editors configure the video and poster in Layout Builder, while visitors first see local public output and choose whether to load the external player.",
-        "evidence": [
-            "capell.json",
-            "resources/views/widget.blade.php",
-            "tests/Feature/WidgetYouTubeTest.php"
-        ]
-    },
     "whyItMatters": {
         "developers": {
             "text": "The extension registers its interaction assets while tests verify that initial HTML contains no YouTube request target and that denied privacy state remains blocked.",
@@ -23,29 +7,6 @@
                 "resources/views/widget.blade.php",
                 "tests/Feature/WidgetYouTubeTest.php"
             ]
-        },
-        "teams": {
-            "text": "Teams can offer embedded video without making an external YouTube request part of the initial page response.",
-            "evidence": [
-                "resources/views/widget.blade.php",
-                "tests/Feature/WidgetYouTubeTest.php"
-            ]
         }
-    },
-    "troubleshooting": [
-        {
-            "symptom": "The video is refused",
-            "cause": "The video ID is not exactly 11 letters, numbers, dashes or underscores",
-            "check": "Check the video ID, not the full address",
-            "fix": "Paste only the 11 character ID from the video address",
-            "evidence": ["src/Data/YouTubeInputData.php"]
-        },
-        {
-            "symptom": "The poster image is refused",
-            "cause": "The poster path is a web address or contains unsupported characters",
-            "check": "Check the poster field",
-            "fix": "Pick a poster image from the media library",
-            "evidence": ["src/Data/YouTubeInputData.php"]
-        }
-    ]
+    }
 }

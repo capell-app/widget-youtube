@@ -3,12 +3,17 @@
     class="capell-youtube"
     data-capell-widget-youtube
     data-video-id="{{ $renderData->videoId }}"
+    @if ($renderData->captionsOn) data-captions="true" @endif
+    @if ($renderData->captionLanguage) data-caption-language="{{ $renderData->captionLanguage }}" @endif
     data-privacy-denied="{{ __('capell-widget-youtube::widget.privacy_denied') }}"
 >
     <div class="capell-youtube__frame">
         <img
             src="{{ asset('storage/' . ltrim($renderData->poster, '/')) }}"
             alt=""
+            @if ($renderData->posterSrcset) srcset="{{ $renderData->posterSrcset }}" sizes="100vw" @endif
+            @if ($renderData->posterWidth && $renderData->posterHeight) width="{{ $renderData->posterWidth }}" height="{{ $renderData->posterHeight }}" @endif
+            decoding="async"
             loading="lazy"
         />
         <button
@@ -23,6 +28,16 @@
     </div>
     @if ($renderData->caption)
         <figcaption>{{ $renderData->caption }}</figcaption>
+    @endif
+    @if ($renderData->transcript)
+        <details class="capell-youtube__transcript">
+            <summary>
+                {{ __('capell-widget-youtube::widget.transcript_heading') }}
+            </summary>
+            @foreach (preg_split('/\R{2,}/', trim($renderData->transcript)) ?: [] as $paragraph)
+                <p>{{ $paragraph }}</p>
+            @endforeach
+        </details>
     @endif
     <noscript
         ><a

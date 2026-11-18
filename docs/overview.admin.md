@@ -12,11 +12,11 @@ Editors configure it as a Layout Builder widget for the URL, local poster, title
 
 ## Good to know
 
-- This free beta extension belongs to Capell Essentials and requires Layout Builder.
+- This free extension belongs to Capell Essentials and requires Layout Builder.
 - The saved video identifier must be exactly 11 URL-safe characters, and the poster must be local media rather than a remote URL.
 - No request reaches YouTube before explicit activation. When Privacy Centre denies `youtube`, playback remains disabled and the visitor sees the privacy notice.
 - The activated iframe uses `youtube-nocookie.com`, a lazy load, a restrictive sandbox, and a strict-origin referrer policy.
 
 ## Screenshot status
 
-Capture the video fields and the public pre-activation poster with its play control and privacy explanation visible. The committed Marketplace card is interim beta artwork until these two fixture captures are recorded.
+Capture the video fields and the public pre-activation poster with its play control and privacy explanation visible.

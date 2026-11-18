@@ -16,6 +16,7 @@ use Capell\LayoutBuilder\Data\WidgetExtensions\WidgetExtensionCapabilitiesData;
 use Capell\LayoutBuilder\Data\WidgetExtensions\WidgetExtensionDefinitionData;
 use Capell\LayoutBuilder\Enums\WidgetPresentationCapability;
 use Capell\LayoutBuilder\Support\WidgetExtensions\WidgetExtensionRegistrar;
+use Capell\WidgetYouTube\Actions\ResolveYouTubePayloadsAction;
 use Capell\WidgetYouTube\Data\YouTubeInputData;
 use Capell\WidgetYouTube\Data\YouTubeRenderData;
 use Capell\WidgetYouTube\Filament\YouTubeWidget;
@@ -46,6 +47,7 @@ final class WidgetYouTubeServiceProvider extends AbstractPackageServiceProvider
             filamentWidget: YouTubeWidget::class,
             inputData: YouTubeInputData::class,
             renderData: YouTubeRenderData::class,
+            batchPayloadResolver: ResolveYouTubePayloadsAction::class,
             fallbackView: 'capell-widget-youtube::widget',
             components: ['blade' => 'capell::widgets.capell-app.youtube'],
             resourceGroups: ['capell-app.widget-youtube'],

@@ -4,10 +4,10 @@
     "scenarios": {
         "default": {
             "source": {
-                "ref": "HEAD",
-                "commit": "adac26b4ce1e9e1de545f68a1ff272ff73111696",
+                "ref": "92da4146f6",
+                "commit": "92da4146f6865853f68459b45621ebc812302b34",
                 "providers": {
-                    "Providers/WidgetYouTubeServiceProvider.php": "8ce57981cd4f2390af2574a3bad0ec6b148ddfa2f48cb72a31bb28cc51fe5b21"
+                    "Providers/WidgetYouTubeServiceProvider.php": "00dda4c76cd2a409436b6ef2f23a388884448e9ff285bebbcf7f0e2856d45620"
                 },
                 "configure": null
             },
@@ -199,7 +199,7 @@
                             "capell-app.youtube": [
                                 "Capell\\LayoutBuilder\\Data\\WidgetExtensions\\WidgetExtensionDefinitionData",
                                 {
-                                    "batchPayloadResolver": null,
+                                    "batchPayloadResolver": "Capell\\WidgetYouTube\\Actions\\ResolveYouTubePayloadsAction",
                                     "capabilities": [
                                         "Capell\\LayoutBuilder\\Data\\WidgetExtensions\\WidgetExtensionCapabilitiesData",
                                         {

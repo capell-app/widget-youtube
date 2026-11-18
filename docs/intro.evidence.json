@@ -1,0 +1,29 @@
+[
+    {
+        "claim": "A picture you chose with a Play button on it stands in for the video; YouTube is not contacted and the video is not loaded until play is pressed",
+        "evidence": [
+            "resources/views/widget.blade.php",
+            "resources/dist/widget.js"
+        ]
+    },
+    {
+        "claim": "Paste a watch, short or embed link; upload your own poster (no automatic YouTube thumbnail); title used for the Play button",
+        "evidence": [
+            "src/Filament/YouTubeVideoIdField.php",
+            "src/Filament/YouTubeWidget.php",
+            "src/Data/YouTubeInputData.php"
+        ]
+    },
+    {
+        "claim": "Plays in place in privacy-enhanced mode, which reduces but does not remove YouTube's tracking, with related videos from the same channel",
+        "evidence": ["resources/dist/widget.js"]
+    },
+    {
+        "claim": "If the site runs Privacy Centre, refusal of marketing cookies, or a Global Privacy Control signal, shows a message and loads nothing",
+        "evidence": ["resources/dist/widget.js", "resources/lang/en/widget.php"]
+    },
+    {
+        "claim": "Without scripts, a link to watch on YouTube",
+        "evidence": ["resources/views/widget.blade.php"]
+    }
+]

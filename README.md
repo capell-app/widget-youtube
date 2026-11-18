@@ -2,27 +2,27 @@
 
 <!-- prettier-ignore-start -->
 
-## What It Does
+A picture you chose, with a Play button on it, stands in for the video, and the YouTube video behind it loads only when a visitor presses play. Until then the page doesn't contact YouTube at all.
 
-YouTube adds a Layout Builder widget with a local poster and a youtube-nocookie.com player that is requested only after visitor activation. With Privacy Centre installed, a visitor who refused marketing cookies, or whose browser sends Global Privacy Control, keeps the external player blocked.
+Setting one up means pasting a normal YouTube link and uploading a still image of your own, because it won't borrow YouTube's thumbnail. Give the video a title as well, which screen readers read out on the Play button.
+
+Your site may run Privacy Centre, which asks visitors for their cookie choices. If so, anyone who turned down marketing cookies, or whose browser asks sites not to track them, sees a short message and nothing loads. A browser that blocks scripts gets a plain link to watch on YouTube.
+
+Once someone presses play, the video starts right there on the page. It plays in YouTube's privacy-enhanced mode, which reduces YouTube's tracking but doesn't remove it, and YouTube may still store things in the browser. When the video ends, the suggestions come from the same channel as the one just played.
 
 - **Price and availability:** Check current availability and price on the [Capell Marketplace listing](https://capell.app/extensions/widget-youtube).
 - **Licence:** Check the licence terms on the [Capell Marketplace listing](https://capell.app/extensions/widget-youtube).
 - **Requires:** `PHP ^8.4`, `capell-app/admin ^1.0`, `capell-app/core ^1.0.66`, `capell-app/frontend ^1.0.2`, `capell-app/layout-builder ^1.0.44`, `spatie/laravel-package-tools ^1.0`.
 - **Install:** `composer require capell-app/widget-youtube`.
 
-Editors configure the video and poster in Layout Builder, while visitors first see local public output and choose whether to load the external player.
-
-## Who It Is For
-
-**For developers:** The extension registers its interaction assets while tests verify that initial HTML contains no YouTube request target and that denied privacy state remains blocked.
-
-**For teams:** Teams can offer embedded video without making an external YouTube request part of the initial page response.
-
 ## Quick Start
 
 1. Install the package: `composer require capell-app/widget-youtube`.
 2. Open a page, click **Layout builder**, **Add widgets**, then choose **YouTube video**.
+
+## For Developers
+
+The extension registers its interaction assets while tests verify that initial HTML contains no YouTube request target and that denied privacy state remains blocked.
 
 ## Configure
 
@@ -65,8 +65,6 @@ This extension works without configuration. There is nothing to set after instal
 | --- | --- | --- | --- |
 | Package surface is missing after install | Provider or manifest is not loaded | Confirm `capell.json`, package `composer.json`, and provider registration | Reinstall the package, refresh Composer autoload, and clear host caches |
 | Public output leaks unexpected state | Render data, cache variation, or authoring boundary has regressed | Check public Blade, cache tags, and public-output safety tests | Move data loading out of Blade and rerun the package public-output tests |
-| The video is refused | The video ID is not exactly 11 letters, numbers, dashes or underscores | Check the video ID, not the full address | Paste only the 11 character ID from the video address |
-| The poster image is refused | The poster path is a web address or contains unsupported characters | Check the poster field | Pick a poster image from the media library |
 
 ## Upgrading
 

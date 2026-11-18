@@ -1,6 +1,6 @@
 {
     "name": "capell-app/widget-youtube",
-    "description": "Privacy-gated YouTube widget for Capell.",
+    "description": "YouTube widget for Capell pages showing your own poster image and loading the video only when a visitor presses play. Needs Layout Builder.",
     "type": "library",
     "license": "proprietary",
     "require": {

@@ -6,7 +6,7 @@
     "kind": "package",
     "capellApiVersion": "^1.0",
     "version": "1.0.0",
-    "description": "Local-poster YouTube embeds that contact youtube-nocookie.com only after explicit activation.",
+    "description": "Your own poster image with a Play button, loading the YouTube video only when a visitor presses it.",
     "product": {
         "group": "Capell Essentials",
         "tier": "free",
@@ -59,7 +59,7 @@
     },
     "settings": [],
     "permissions": [],
-    "capabilities": ["frontend.public-static"],
+    "capabilities": ["frontend-surface"],
     "security": {
         "riskTier": "low",
         "publicSurface": {
@@ -146,41 +146,63 @@
         "privateDocsRequested": false
     },
     "marketplace": {
-        "summary": "Privacy-gated YouTube video with a local poster and no pre-activation tracking.",
-        "description": "Embed a YouTube video without loading YouTube until the visitor chooses to play: they see a local poster and a play control first, and a direct watch link without JavaScript. Requires Layout Builder. Limits: it supports YouTube only, and the poster image must be uploaded to the Capell media library.",
-        "problem": "A team embedding video may contact YouTube before a visitor chooses to play it.",
-        "outcome": "A page shows a local poster until the visitor chooses to load the video.",
+        "summary": "YouTube videos on a page behind your own picture, with YouTube contacted only when a visitor presses play.",
+        "description": "On a page built in Layout Builder, paste a YouTube link, upload your own poster image to the Capell media library and give the video a title, which screen readers hear on the Play button. Visitors see your picture, and YouTube isn't contacted until they press play. The video then plays on the page in YouTube's privacy-enhanced mode, which cuts down tracking but doesn't stop it. If Privacy Centre is on and a visitor refused YouTube, they get a short message.",
+        "problem": "Standard YouTube videos slow my pages and contact YouTube before anyone chooses to watch.",
+        "outcome": "Pages open with your chosen picture, and the video plays in place on one tap.",
         "faq": [
             {
-                "question": "What appears before video playback?",
-                "answer": "Visitors first see a local poster and choose whether to load the player."
+                "question": "Does the page contact YouTube before someone plays the video?",
+                "answer": "No. A poster image you uploaded stands in for the video, and nothing is requested from YouTube until a visitor presses play."
             },
             {
-                "question": "Can privacy choices prevent playback?",
-                "answer": "Yes. Privacy Centre decisions can keep the external player blocked."
+                "question": "Do I need to upload my own poster image?",
+                "answer": "Yes. You upload a still image of your own, because the widget does not borrow YouTube's thumbnail. You also give the video a title, which screen readers read out."
             },
             {
-                "question": "When is YouTube contacted by the player?",
-                "answer": "The youtube-nocookie.com player is requested only after visitor activation."
+                "question": "What if a visitor has turned down cookies?",
+                "answer": "If your site runs Privacy Centre and they turned down marketing cookies, or their browser asks sites not to track them, they see a short message and the video does not load."
+            },
+            {
+                "question": "Does it remove YouTube's tracking?",
+                "answer": "No. It plays in YouTube's privacy-enhanced mode, which reduces tracking but does not remove it, and YouTube may still store things in the browser."
+            },
+            {
+                "question": "What if the visitor's browser blocks scripts?",
+                "answer": "They are given a plain link to watch the video on YouTube."
             }
         ],
         "screenshots": [
             {
                 "path": "docs/assets/marketplace/listing-youtube-public-output.png",
-                "alt": "Youtube public output",
-                "caption": "Youtube public output"
+                "alt": "Corridor photo with a Play video label beneath it and a note that playback starts only when a visitor chooses to play",
+                "caption": "A poster image stands in for the video until a visitor chooses to play it."
             },
             {
                 "path": "docs/assets/marketplace/listing-youtube-layout-builder-editor.png",
-                "alt": "YouTube fields in Layout Builder",
-                "caption": "YouTube fields in Layout Builder"
+                "alt": "Page editor with a YouTube video block open, showing a video code, a poster image, a title field and a caption",
+                "caption": "Paste the video link, upload a poster image and give the video a title for screen readers."
             },
             {
                 "path": "docs/assets/marketplace/extension-card.jpg",
-                "alt": "YouTube widget preview",
-                "caption": "YouTube widget"
+                "alt": "Marketplace card for YouTube with a play button and the words No request before play",
+                "caption": "Card used for the widget's Marketplace listing."
             }
         ],
         "categories": ["foundation", "frontend", "media"]
+    },
+    "contributionTraceability": {
+        "contributions": [
+            {
+                "type": "asset",
+                "key": "resource-group:capell-app.widget-youtube",
+                "providerBucket": "runtime"
+            },
+            {
+                "type": "content-widget",
+                "key": "capell-app.youtube",
+                "providerBucket": "runtime"
+            }
+        ]
     }
 }

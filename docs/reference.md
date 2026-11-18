@@ -6,7 +6,7 @@ Developer reference for `capell-app/widget-youtube`. Start with the [README](../
 
 ## Package Details
 
-YouTube Widget is an **Available**, **No schema impact** Capell package in the **Capell Essentials** product group. It ships as `capell-app/widget-youtube` and extends these surfaces: admin, frontend.
+YouTube Widget is an **Available** Capell package in the **Capell Essentials** product group. It ships as `capell-app/widget-youtube` and extends these surfaces: admin, frontend.
 
 - Status: Available
 - Tier: free
@@ -25,6 +25,10 @@ YouTube Widget is an **Available**, **No schema impact** Capell package in the *
 
 - `YouTubeVideoIdField`
 - `YouTubeWidget`
+
+### Actions
+
+- `ResolveYouTubePayloadsAction`
 
 ### Data objects
 

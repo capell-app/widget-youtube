@@ -29,10 +29,6 @@ Editors configure it as a Layout Builder widget for the URL, local poster, title
 - No request reaches YouTube before explicit activation. When Privacy Centre denies `youtube`, playback remains disabled and the visitor sees the privacy notice.
 - The activated iframe uses `youtube-nocookie.com`, a lazy load, a restrictive sandbox, and a strict-origin referrer policy.
 
-## Screenshot status
-
-Capture the video fields and the public pre-activation poster with its play control and privacy explanation visible.
-
 ---
 
 For developers: see the [README](../README.md).

@@ -24,6 +24,9 @@
         "supports": ["capell-app/privacy-center"],
         "conflicts": []
     },
+    "privacy": {
+        "purposes": { "youtube": "marketing" }
+    },
     "providers": {
         "metadata": [],
         "install": [],

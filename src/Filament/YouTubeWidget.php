@@ -24,9 +24,9 @@ final class YouTubeWidget implements FilamentWidget
     public static function make(): Block
     {
         return Block::make(self::getWidgetName())->label(__('capell-widget-youtube::widget.label'))->schema([
-            YouTubeVideoIdField::make('videoId')->label(__('capell-widget-youtube::widget.url')),
+            YouTubeVideoIdField::make('videoId')->label(__('capell-widget-youtube::widget.url'))->helperText(__('capell-widget-youtube::widget.url_helper')),
             WidgetFileUpload::make('poster')->label(__('capell-widget-youtube::widget.poster'))->image()->required(),
-            TextInput::make('title')->label(__('capell-widget-youtube::widget.title'))->required()->maxLength(180),
+            TextInput::make('title')->label(__('capell-widget-youtube::widget.title'))->helperText(__('capell-widget-youtube::widget.title_helper'))->required()->maxLength(180),
             Textarea::make('caption')->label(__('capell-widget-youtube::widget.caption'))->maxLength(500),
             Textarea::make('transcript')->label(__('capell-widget-youtube::widget.transcript'))->helperText(__('capell-widget-youtube::widget.transcript_helper'))->rows(6)->maxLength(20000),
             Toggle::make('captionsOn')->label(__('capell-widget-youtube::widget.captions_on'))->helperText(__('capell-widget-youtube::widget.captions_on_helper'))->default(false),

@@ -10,14 +10,14 @@ Your site may run Privacy Centre, which asks visitors for their cookie choices. 
 
 Once someone presses play, the video starts right there on the page. It plays in YouTube's privacy-enhanced mode, which reduces YouTube's tracking but doesn't remove it, and YouTube may still store things in the browser. When the video ends, the suggestions come from the same channel as the one just played.
 
-- **Price and availability:** Check current availability and price on the [Capell Marketplace listing](https://capell.app/extensions/widget-youtube).
-- **Licence:** Check the licence terms on the [Capell Marketplace listing](https://capell.app/extensions/widget-youtube).
-- **Requires:** `PHP ^8.4`, `capell-app/admin ^1.0`, `capell-app/core ^1.0.66`, `capell-app/frontend ^1.0.2`, `capell-app/layout-builder ^1.0.44`, `spatie/laravel-package-tools ^1.0`.
-- **Install:** `composer require capell-app/widget-youtube`.
+- **Price and availability:** Check current availability and price on the [Capell Marketplace listing](https://capell.app/marketplace/extensions/widget-youtube).
+- **Licence:** Check the licence terms on the [Capell Marketplace listing](https://capell.app/marketplace/extensions/widget-youtube).
+- **Requires:** `PHP ^8.4`, `capell-app/admin ^1.0`, `capell-app/core ^1.0.79`, `capell-app/frontend ^1.0.79`, `capell-app/layout-builder ^1.0.44`, `spatie/laravel-package-tools ^1.0`.
+- **Install:** `composer require capell-app/widget-youtube:@beta`.
 
 ## Quick Start
 
-1. Install the package: `composer require capell-app/widget-youtube`.
+1. Install the package: `composer require capell-app/widget-youtube:@beta`.
 2. Open a page, click **Layout builder**, **Add widgets**, then choose **YouTube video**.
 
 ## For Developers
@@ -30,7 +30,7 @@ This extension works without configuration. There is nothing to set after instal
 
 ## Limits And Pitfalls
 
-- Install the required Capell packages at the versions in `composer.json`: `capell-app/admin ^1.0`, `capell-app/core ^1.0.66`, `capell-app/frontend ^1.0.2`, `capell-app/layout-builder ^1.0.44`.
+- Install the required Capell packages at the versions in `composer.json`: `capell-app/admin ^1.0`, `capell-app/core ^1.0.79`, `capell-app/frontend ^1.0.79`, `capell-app/layout-builder ^1.0.44`.
 - Keep public Blade and cached HTML free of authoring markers, model IDs, permissions, signed editor URLs, and lazy database queries.
 - Custom write integrations must preserve invalidation for `widget-youtube` cache tags.
 

@@ -2,7 +2,11 @@
 
 declare(strict_types=1);
 
+use Capell\Core\Contracts\Privacy\ConsentDecisionProvider;
+use Capell\Core\Enums\ConsentCategory;
+use Capell\Core\Enums\ConsentDecision;
 use Capell\Core\Facades\CapellCore;
+use Capell\Core\Support\Privacy\ConsentSettings;
 use Capell\Frontend\Actions\AssertPublicHtmlContainsNoAuthoringSurfaceAction;
 use Capell\Frontend\Support\Security\PublicHtmlSafetyInspector;
 use Capell\LayoutBuilder\Data\WidgetExtensions\WidgetExtensionPayloadBatchData;
@@ -15,6 +19,7 @@ use Capell\WidgetYouTube\Data\YouTubeRenderData;
 use Capell\WidgetYouTube\Filament\YouTubeVideoIdField;
 use Capell\WidgetYouTube\Health\WidgetYouTubeHealthCheck;
 use Capell\WidgetYouTube\Providers\WidgetYouTubeServiceProvider;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 use Symfony\Component\HttpFoundation\Response;
@@ -116,4 +121,14 @@ it('serves a srcset for a wide poster and keeps a missing poster plain, with no 
     expect($wide)->toContain('srcset="')->toContain(' 480w')->toContain('posters/wide.jpg 1800w')->toContain('sizes="100vw"')
         ->and($wide)->not->toContain('instance')->not->toContain(Storage::disk('public')->path(''))
         ->and($missing)->not->toContain('srcset=');
+});
+
+it('refuses the youtube purpose on a Global Privacy Control request without a consent manager or site config', function (): void {
+    config()->set('capell.privacy.consent.purposes', []);
+    $provider = resolve(ConsentDecisionProvider::class);
+    $optedOut = Request::create('/', server: ['HTTP_SEC_GPC' => '1']);
+
+    expect($provider->purposes())->toHaveKey('youtube', 'marketing')
+        ->and($provider->decide('youtube', $optedOut))->toBe(ConsentDecision::Denied)
+        ->and($provider->decide('youtube', Request::create('/')))->toBe(resolve(ConsentSettings::class)->defaultDecision(ConsentCategory::Marketing));
 });
